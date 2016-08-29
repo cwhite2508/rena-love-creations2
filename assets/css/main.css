@@ -454,36 +454,131 @@ body {
   -webkit-text-size-adjust: 100%; }
 
 .home-wrap header {
-  width: auto;
+  width: 100%;
   background: white;
-  height: 135px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex; }
-  .home-wrap header .header-position {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    bottom: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
-  .home-wrap header .logo {
-    overflow: hidden;
-    text-indent: 101%;
-    white-space: nowrap;
-    background-image: url(/assets/img/rena-love-logo.svg);
-    background-repeat: no-repeat;
-    background-position: 100px;
-    background-color: white;
-    background-width: 200px auto; }
-  .home-wrap header .site-nav ul {
-    text-align: right;
+  height: 100px;
+  padding: 50px; }
+
+.home-wrap .header-position {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  bottom: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.home-wrap .logo {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+  max-width: 500px;
+  max-height: 300px;
+  float: left;
+  margin-left: 50px;
+  margin-top: 20px;
+  background-image: url(/assets/img/rena-love-logo.svg);
+  background-repeat: no-repeat;
+  background-color: white; }
+
+.home-wrap .site-nav {
+  width: 80%;
+  float: right;
+  display: inline-block;
+  text-align: right;
+  margin-top: 20px; }
+  .home-wrap .site-nav ul {
+    text-align: center;
     list-style: none; }
-  .home-wrap header .site-nav li {
+  .home-wrap .site-nav li {
     display: inline;
-    float: right;
-    list-style: none; }
+    list-style: none;
+    padding: 0% 3%; }
+  .home-wrap .site-nav a {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #541816; }
+
+.home-wrap .mobile-nav-toggle {
+  display: none;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  -ms-flex-align: center;
+      align-items: center;
+  cursor: pointer; }
+  .home-wrap .mobile-nav-toggle:selection {
+    background: transparent; }
+  .home-wrap .mobile-nav-toggle span,
+  .home-wrap .mobile-nav-toggle span:before,
+  .home-wrap .mobile-nav-toggle span:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #541816;
+    position: relative;
+    transition: all 0.3s ease-in-out; }
+  .home-wrap .mobile-nav-toggle span:before {
+    top: 15px; }
+  .home-wrap .mobile-nav-toggle span:after {
+    top: -17px; }
+  .home-wrap .mobile-nav-toggle.is-open span {
+    background: transparent; }
+  .home-wrap .mobile-nav-toggle.is-open span:before,
+  .home-wrap .mobile-nav-toggle.is-open span:after {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: 0; }
+  .home-wrap .mobile-nav-toggle.is-open span:before {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+
+.home-wrap .mobile-nav {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: white;
+  padding: 30px 0 20px;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  transition: all 0.3s ease-in-out; }
+  .home-wrap .mobile-nav a {
+    color: #541816; }
+    .home-wrap .mobile-nav a:hover, .home-wrap .mobile-nav a:active {
+      color: #666; }
+  .home-wrap .mobile-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .home-wrap .mobile-nav li {
+    text-align: center;
+    margin-bottom: 10px; }
+
+@media (max-width: 775px) {
+  .home-wrap header {
+    width: auto;
+    padding: 20px 0; }
+    .home-wrap header .header-position {
+      width: auto;
+      position: relative;
+      top: auto;
+      bottom: auto;
+      left: auto;
+      -ms-flex-direction: row;
+          flex-direction: row;
+      -ms-flex-align: center;
+          align-items: center; }
+    .home-wrap header .site-nav {
+      display: none; }
+    .home-wrap header .logo {
+      height: 40px; }
+    .home-wrap header .mobile-nav-toggle {
+      display: -ms-flexbox;
+      display: flex; }
+  .home-wrap .mobile-nav.is-open {
+    display: block;
+      display-transform: translateY(0%); } }

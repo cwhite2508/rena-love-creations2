@@ -1,8 +1,17 @@
-header
-  h1.logo Rena Love Creations
+mixin nav-content()
+  ul
+    li: a(href="#about") About
+    li: a(href="#order") Order
+    li: a(href="#contact") Contact
 
-  nav
-    ul
-      li: a(href="#home") Home
-      li: a(href="#about") About
-      li: a(href="#order") Order
+.mobile-nav
+  +nav-content()
+
+header
+ .header-position
+    h1.logo Rena Love Creations
+
+    nav.site-nav
+      +nav-content()
+
+    .mobile-nav-toggle: span
